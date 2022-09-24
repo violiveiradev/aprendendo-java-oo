@@ -20,6 +20,11 @@ public abstract class Conta {
 
     public abstract void deposita(double valor);
 
+    
+    /** 
+     * @param valor
+     * @throws SaldoInsuficienteException
+     */
     public void saca(double valor) throws SaldoInsuficienteException {
         if(this.saldo < valor) {
             throw new SaldoInsuficienteException("Saldo: " + this.saldo + ", Valor: " + valor);
@@ -28,19 +33,37 @@ public abstract class Conta {
         this.saldo -= valor;
     }
 
+    
+    /** 
+     * @param valor
+     * @param destino
+     * @throws SaldoInsuficienteException
+     */
     public void transfere(double valor, Conta destino) throws SaldoInsuficienteException {
         this.saca(valor);
         destino.deposita(valor);
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getSaldo(){
         return this.saldo;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getNumero(){
         return this.numero;
     }
 
+    
+    /** 
+     * @param numero
+     */
     public void setNumero(int numero){
         if(numero <= 0) {
             System.out.println("Nao pode valor menor igual a 0");
@@ -49,10 +72,18 @@ public abstract class Conta {
         this.numero = numero;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getAgencia(){
         return this.agencia;
     }
 
+    
+    /** 
+     * @param agencia
+     */
     public void setAgencia(int agencia){
        if(agencia <= 0) {
            System.out.println("Nao pode valor menor igual a 0");
@@ -61,14 +92,26 @@ public abstract class Conta {
        this.agencia = agencia;
     }
 
+    
+    /** 
+     * @param titular
+     */
     public void setTitular(Cliente titular){
         this.titular = titular;
     }
 
+    
+    /** 
+     * @return Cliente
+     */
     public Cliente getTitular(){
         return this.titular;
     }
 
+    
+    /** 
+     * @return int
+     */
     public static int getTotal(){
         return Conta.total;
     }

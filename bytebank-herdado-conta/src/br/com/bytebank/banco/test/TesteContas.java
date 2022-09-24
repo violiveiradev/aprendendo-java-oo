@@ -6,6 +6,11 @@ import br.com.bytebank.banco.model.SaldoInsuficienteException;
 
 public class TesteContas {
 
+	
+	/** 
+	 * @param args
+	 * @throws SaldoInsuficienteException
+	 */
 	public static void main(String[] args) throws SaldoInsuficienteException {
 		
 		ContaCorrente cc = new ContaCorrente(111, 111);

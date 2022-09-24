@@ -9,6 +9,10 @@ public class ContaEspecial extends Conta {
         //TODO Auto-generated constructor stub
     }
 
+    
+    /** 
+     * @param valor
+     */
     @Override
     public void deposita(double valor) {
         // TODO Auto-generated method stub
