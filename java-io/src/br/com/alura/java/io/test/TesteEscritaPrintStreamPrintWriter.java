@@ -17,5 +17,7 @@ public class TesteEscritaPrintStreamPrintWriter {
         ps.println("tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
 
         ps.close();
+
+        System.out.println();
     }
 }
