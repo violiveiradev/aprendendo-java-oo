@@ -1,7 +1,8 @@
 package br.com.bytebank.banco.model;
 
+import java.io.Serializable;
 
-public abstract class Conta implements Comparable<Conta> {
+public abstract class Conta implements Comparable<Conta>, Serializable {
 
     protected double saldo;
     private int agencia;
