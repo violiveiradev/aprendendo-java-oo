@@ -21,12 +21,15 @@ public class TestaListaDeAula {
         // imprime o toString da classe
         // antes de ordenar:
         System.out.println(aulas);
+        System.out.println();
 
         // ordenação como criterio ordem alfabetica
         Collections.sort(aulas);
+        System.out.println();
 
         // depois de ordenar:
         System.out.println(aulas);
+        System.out.println();
 
         // ordenando com criterio de tempo
         // Collections.sort(aulas, Comparator.comparing(Aula::getTempo));

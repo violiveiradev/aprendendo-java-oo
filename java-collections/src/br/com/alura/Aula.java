@@ -24,6 +24,7 @@ public class Aula  implements Comparable<Aula> {
         return "[Aula: " + this.titulo + ", " + this.tempo + " minutos]";
     }
 
+    // Inserindo metodo de comparacao, necessário assinar o contrato, implementar "Comparable"
     @Override
     public int compareTo(Aula outraAula) {
         return this.titulo.compareTo(outraAula.titulo);
