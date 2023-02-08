@@ -1,8 +1,10 @@
 package br.com.alura;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class Curso {
 
@@ -10,6 +12,7 @@ public class Curso {
     private String instrutor;
     private int tempoTotal; // Inserindo variavel para soma de tempo (1 maneira)
     private List<Aula> aulas = new LinkedList<Aula>();
+    private Set<Aluno> alunos = new HashSet<>();
     
     public Curso(String nome, String instrutor) {
         this.nome = nome;
@@ -38,6 +41,14 @@ public class Curso {
         return this.tempoTotal; //(1 maneira)
     }
 
+    public void matricula(Aluno aluno){
+        this.alunos.add(aluno);
+    }
+
+    public Set<Aluno> getAlunos() {
+        return Collections.unmodifiableSet(alunos);
+    }
+
     // (2 maneira)
 
     // public int getTempoTotal() {
@@ -51,6 +62,10 @@ public class Curso {
     @Override
     public String toString() {
         return "[Curso: " + this.getNome() + " | " + "Instrutor: " + this.getInstrutor() + " | " + "Tempo de Curso: " + this.getTempoTotal() + " minutos" + "]";
+    }
+
+    public boolean estaMatriculado(Aluno aluno) {
+        return this.alunos.contains(aluno);
     }
     
 }
