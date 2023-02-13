@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+//import java.util.Comparator;
 import java.util.List;
+import static java.util.Comparator.*;
 
 public class TestaStingComLambda {
     
@@ -17,10 +19,21 @@ public class TestaStingComLambda {
         //palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
 
         //Forma de comparar sem o método compare
-        palavras.sort((s1, s2) -> s1.length() - s2.length());
+        //palavras.sort((s1, s2) -> s1.length() - s2.length());
+
+        //palavras.sort(Comparator.comparing(s -> s.length()));
+
+        //Forma de comparar com metodo reference
+        palavras.sort(comparing(String::length));
+
+        //palavras.sort(String.CASE_INSENSITIVE_ORDER);
 
         System.out.println(palavras);
 
-        palavras.forEach(palavra -> System.out.println(palavra));
+        //palavras.forEach(palavra -> System.out.println(palavra));
+
+        
+        palavras.forEach(System.out::println);
     }
+
 }
